@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = `Chen Qiuxia's home`;
+  title = `Chen Qiuxia's personal resume`;
+  uncheckableRadioModel = 'Middle';
+  showFlag = false;
+  habbit=["sleep","eating","dog","pig"];
+  itemDetail = "";
+
+  toggle($event){
+    this.showFlag = !this.showFlag;
+  }
 }
