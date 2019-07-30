@@ -7,10 +7,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { CarouselModule } from 'ngx-bootstrap';
+import { RouterModule, Routes } from '@angular/router';
+import { DogShowComponent } from './dog-show/dog-show.component';
+
+const appRoutes: Routes = [
+  {path:'dog-show',component:DogShowComponent},
+  // { path: '',
+  //   redirectTo: 'dog-show',
+  //   pathMatch: 'full'
+  // }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DogShowComponent
   ],
   imports: [
     FormsModule,
@@ -18,7 +29,12 @@ import { CarouselModule } from 'ngx-bootstrap';
     AppRoutingModule,
     BrowserAnimationsModule,
     ButtonsModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    // RouterModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

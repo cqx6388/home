@@ -48,10 +48,11 @@
 <ng-container *ngIf="showFlag; else show"><div>Hello World!</div></ng-container>
 <ng-template #show><div>Hello Customer!</div></ng-template>
 
+<ng-container>
 <button (click)="toggle($event)">Click</button>
+</ng-container>
 
-<!-- <div *ngFor="let item of habbit">{{item}}</div> -->
-
+<div>My habbit!</div>
 <select [(ngModel)]="itemDetail">
   <option *ngFor="let item of habbit" [value]="item">
     {{item}}
@@ -60,4 +61,8 @@
 
 <div>{{itemDetail}}</div>
 
+<h1>Dog Router</h1>
+<nav>
+  <a routerLink="/dog-show" routerLinkActive="active">My lovely dog</a>
+</nav>
 <router-outlet></router-outlet>
